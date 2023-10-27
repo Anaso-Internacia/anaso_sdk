@@ -5,6 +5,6 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "API models for Ana.so"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+serde = {version = "1.0.189", features = ["derive", "rc"]}
+serde-email = "3.0.0"

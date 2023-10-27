@@ -10,3 +10,4 @@ members = ["anaso_api_models"]
 resolver = "2"
 
 [dependencies]
+anaso_api_models = {path = "./anaso_api_models"}
