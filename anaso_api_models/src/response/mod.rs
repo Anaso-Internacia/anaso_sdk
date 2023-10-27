@@ -7,8 +7,8 @@ use crate::id::*;
 
 #[derive(Deserialize, Serialize)]
 pub struct ApiInfo<'a> {
-    version: Cow<'a, str>,
-    deprecation_warning: Option<Cow<'a, str>>,
+    pub version: Cow<'a, str>,
+    pub deprecation_warning: Option<Cow<'a, str>>,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
