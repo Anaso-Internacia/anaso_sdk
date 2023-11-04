@@ -23,3 +23,12 @@ pub struct SelfUserData<'a> {
     pub username: Cow<'a, str>,
     pub email: Email,
 }
+
+#[derive(Debug, Deserialize, Serialize)]
+pub struct PostData<'a> {
+    pub id: PostId,
+    pub anaseto_id: AnasetoId,
+    pub user_id: UserId,
+    pub title: Cow<'a, str>,
+    pub content: Cow<'a, str>,
+}

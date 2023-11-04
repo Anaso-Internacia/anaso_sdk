@@ -5,6 +5,6 @@ macro_rules! gen_id {
     };
 }
 
-gen_id!(AnasejoId);
+gen_id!(AnasetoId);
 gen_id!(PostId);
 gen_id!(UserId);
