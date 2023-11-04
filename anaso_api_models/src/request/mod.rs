@@ -28,5 +28,5 @@ pub struct ReqNewAnaseto<'a> {
 pub struct ReqNewPost<'a> {
     pub anaseto_id: AnasetoId,
     pub title: Cow<'a, str>,
-    pub content_md: Cow<'a, str>,
+    pub body_md: Cow<'a, str>,
 }
