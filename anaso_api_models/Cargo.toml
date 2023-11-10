@@ -6,5 +6,6 @@ license = "MIT OR Apache-2.0"
 description = "API models for Ana.so"
 
 [dependencies]
+bs58 = "0.5.0"
 serde = {version = "1.0.189", features = ["derive", "rc"]}
 serde-email = "3.0.0"
