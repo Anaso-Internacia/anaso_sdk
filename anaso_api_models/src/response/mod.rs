@@ -30,5 +30,6 @@ pub struct PostData<'a> {
     pub anaseto_id: AnasetoId,
     pub user_id: UserId,
     pub title: Cow<'a, str>,
-    pub body: Cow<'a, str>,
+    pub body_md: Option<Cow<'a, str>>,
+    pub body_html: Option<Cow<'a, str>>,
 }
