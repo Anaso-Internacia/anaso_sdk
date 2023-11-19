@@ -5,10 +5,18 @@ use serde_email::Email;
 
 use crate::id::*;
 
-#[derive(Deserialize, Serialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct ApiInfo<'a> {
     pub version: Cow<'a, str>,
     pub deprecation_warning: Option<Cow<'a, str>>,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+pub enum RegistrationError {
+    UsernameTaken,
+    EmailTaken,
+    PasswordError,
+    InsecurePassword,
 }
 
 #[derive(Debug, Deserialize, Serialize)]
