@@ -10,3 +10,4 @@ readme = "./README.md"
 bs58 = "0.5.0"
 serde = {version = "1.0.189", features = ["derive", "rc"]}
 serde-email = "3.0.0"
+chrono = {version = "0.4", features = ["serde"]}
