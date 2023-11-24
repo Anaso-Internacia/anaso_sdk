@@ -53,7 +53,9 @@ pub enum PostSort {
 
 #[derive(Debug, Default, Deserialize, Serialize)]
 pub struct ReqListPosts {
+    #[serde(default)]
+    pub sort: PostSort,
     pub anaseto: Option<AnasetoId>,
     pub user: Option<UserId>,
-    pub sort: PostSort,
+    pub page: Option<i32>,
 }
