@@ -52,6 +52,7 @@ pub struct ReqListPosts {
     pub sort: PostSort,
     pub anaseto: Option<AnasetoId>,
     pub user: Option<UserId>,
+    #[serde(default)]
     #[serde(with = "ts_seconds_option")]
     pub since: Option<DateTime<Utc>>,
     pub page: Option<i32>,
