@@ -43,12 +43,7 @@ pub enum PostSort {
     Hot,
 
     /// Return posts sorted purely by score
-    Top {
-        /// Box the posts returned to a particular time span
-        ///
-        /// If [`None`], will include all posts from all time
-        since: Option<DateTime<Utc>>,
-    },
+    Top,
 }
 
 #[derive(Debug, Default, Deserialize, Serialize)]
@@ -57,5 +52,6 @@ pub struct ReqListPosts {
     pub sort: PostSort,
     pub anaseto: Option<AnasetoId>,
     pub user: Option<UserId>,
+    pub since: Option<DateTime<Utc>>,
     pub page: Option<i32>,
 }
