@@ -1,6 +1,6 @@
 use std::borrow::Cow;
 
-use chrono::{DateTime, Utc};
+use chrono::{serde::ts_seconds, DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use serde_email::Email;
 
@@ -41,5 +41,6 @@ pub struct PostData<'a> {
     pub title: Cow<'a, str>,
     pub body_md: Option<Cow<'a, str>>,
     pub body_html: Option<Cow<'a, str>>,
+    #[serde(with = "ts_seconds")]
     pub created_at: DateTime<Utc>,
 }

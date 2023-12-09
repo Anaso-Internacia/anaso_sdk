@@ -1,6 +1,6 @@
 use std::borrow::Cow;
 
-use chrono::{DateTime, Utc};
+use chrono::{serde::ts_seconds_option, DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use serde_email::Email;
 
@@ -52,6 +52,7 @@ pub struct ReqListPosts {
     pub sort: PostSort,
     pub anaseto: Option<AnasetoId>,
     pub user: Option<UserId>,
+    #[serde(with = "ts_seconds_option")]
     pub since: Option<DateTime<Utc>>,
     pub page: Option<i32>,
 }
