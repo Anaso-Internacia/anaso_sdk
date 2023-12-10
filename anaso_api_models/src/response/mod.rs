@@ -41,6 +41,7 @@ pub struct PostData<'a> {
     pub title: Cow<'a, str>,
     pub body_md: Option<Cow<'a, str>>,
     pub body_html: Option<Cow<'a, str>>,
+    pub score: i64,
     #[serde(with = "ts_seconds")]
     pub created_at: DateTime<Utc>,
 }
