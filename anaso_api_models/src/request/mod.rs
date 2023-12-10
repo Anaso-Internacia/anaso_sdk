@@ -53,6 +53,8 @@ pub struct ReqListPosts {
     pub anaseto: Option<AnasetoId>,
     pub user: Option<UserId>,
     #[serde(default)]
+    pub prefer_md: bool,
+    #[serde(default)]
     #[serde(with = "ts_seconds_option")]
     pub since: Option<DateTime<Utc>>,
     pub page: Option<i32>,
