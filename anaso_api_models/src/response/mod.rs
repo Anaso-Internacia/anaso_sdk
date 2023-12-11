@@ -49,8 +49,8 @@ pub struct PostData<'a> {
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Paged<T> {
     pub value: T,
+    pub curr_page: Option<i64>,
     pub next_page: Option<i64>,
-    pub prev_page: Option<i64>,
 }
 
 impl<T> std::ops::Deref for Paged<T> {
