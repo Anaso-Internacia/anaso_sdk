@@ -45,3 +45,17 @@ pub struct PostData<'a> {
     #[serde(with = "ts_seconds")]
     pub created_at: DateTime<Utc>,
 }
+
+#[derive(Debug, Deserialize, Serialize)]
+pub struct Paged<T> {
+    pub value: T,
+    pub next_page: Option<i64>,
+    pub prev_page: Option<i64>,
+}
+
+impl<T> std::ops::Deref for Paged<T> {
+    type Target = T;
+    fn deref(&self) -> &Self::Target {
+        &self.value
+    }
+}

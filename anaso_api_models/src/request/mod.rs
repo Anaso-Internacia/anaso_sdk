@@ -57,5 +57,5 @@ pub struct ReqListPosts {
     #[serde(default)]
     #[serde(with = "ts_seconds_option")]
     pub since: Option<DateTime<Utc>>,
-    pub page: Option<i32>,
+    pub page: Option<i64>,
 }
