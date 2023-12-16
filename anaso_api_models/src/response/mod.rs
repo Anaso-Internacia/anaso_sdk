@@ -34,6 +34,15 @@ pub struct SelfUserData<'a> {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
+pub struct AnasetoData<'a> {
+    pub id: AnasetoId,
+    pub name: Cow<'a, str>,
+    pub description: Cow<'a, str>,
+    #[serde(with = "ts_seconds")]
+    pub created_at: DateTime<Utc>,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
 pub struct PostData<'a> {
     pub id: PostId,
     pub anaseto_id: AnasetoId,
