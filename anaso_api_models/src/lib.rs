@@ -7,7 +7,7 @@ pub mod response;
 bitflags! {
     /// A set of flags representing the permissions a user has in a given Anaseto
     #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
-    pub struct PERMISSIONS: u32 {
+    pub struct Permissions: u32 {
         /// Can add/remove moderators
         const ADMIN = 0b00000001;
 
