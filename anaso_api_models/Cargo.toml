@@ -7,7 +7,7 @@ description = "API models for Ana.so"
 readme = "./README.md"
 
 [dependencies]
-bitflags = "2.4.1"
+bitflags = { version = "2.4.1", features = ["serde"] }
 bs58 = "0.5.0"
 serde = { version = "1.0.189", features = ["derive", "rc"] }
 serde-email = "3.0.0"

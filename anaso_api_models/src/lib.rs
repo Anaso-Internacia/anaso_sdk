@@ -1,4 +1,5 @@
 use bitflags::bitflags;
+use serde::{Deserialize, Serialize};
 
 pub mod id;
 pub mod request;
@@ -6,7 +7,7 @@ pub mod response;
 
 bitflags! {
     /// A set of flags representing the permissions a user has in a given Anaseto
-    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+    #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Deserialize, Serialize)]
     pub struct Permissions: u32 {
         /// Can add/remove moderators
         const ADMIN = 0b00000001;
