@@ -1,0 +1,1 @@
+gen_id!(PostId);

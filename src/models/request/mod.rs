@@ -6,6 +6,7 @@ use serde_email::Email;
 
 use crate::id::{AnasetoId, UserId};
 
+/// Create user
 #[derive(Deserialize, Serialize)]
 pub struct ReqRegisterUser<'a> {
     pub username: Cow<'a, str>,
@@ -13,18 +14,36 @@ pub struct ReqRegisterUser<'a> {
     pub password: Cow<'a, str>,
 }
 
+/// Login
 #[derive(Deserialize, Serialize)]
 pub struct ReqLogin<'a> {
     pub user_or_email: Cow<'a, str>,
     pub password: Cow<'a, str>,
 }
 
+/// Create Anaseto
 #[derive(Deserialize, Serialize)]
 pub struct ReqNewAnaseto<'a> {
     pub name: Cow<'a, str>,
     pub description: Cow<'a, str>,
 }
 
+/// List Anasetoj
+#[derive(Debug, Default, Deserialize, Serialize)]
+pub struct ReqListAnasetoj<'a> {
+    /// Get an Anaseto by exact name
+    pub name: Option<Cow<'a, str>>,
+
+    /// Search for Anasetoj with names that contain the search string
+    pub search: Option<Cow<'a, str>>,
+
+    /// Search for Anasetoj with names that start with the search string
+    ///
+    /// This can be useful for auto-fill search boxes
+    pub starts_with: Option<Cow<'a, str>>,
+}
+
+/// Create Post
 #[derive(Deserialize, Serialize)]
 pub struct ReqNewPost<'a> {
     pub anaseto_id: AnasetoId,
@@ -46,6 +65,7 @@ pub enum PostSort {
     Top,
 }
 
+/// List posts
 #[derive(Debug, Default, Deserialize, Serialize)]
 pub struct ReqListPosts {
     #[serde(default)]

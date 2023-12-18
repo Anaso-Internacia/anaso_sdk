@@ -1,14 +1,12 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub mod id;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+#[cfg(feature = "models")]
+pub mod models;
+
+pub type Result<T, E = Error> = core::result::Result<T, E>;
+
+pub enum Error {
+    E,
 }

@@ -20,9 +20,13 @@ macro_rules! gen_id {
     };
 }
 
-gen_id!(AnasetoId);
-gen_id!(PostId);
-gen_id!(UserId);
+pub use anaseto_id::AnasetoId;
+pub use post_id::PostId;
+pub use user_id::UserId;
+
+pub mod anaseto_id;
+pub mod post_id;
+pub mod user_id;
 
 #[cfg(test)]
 mod test {

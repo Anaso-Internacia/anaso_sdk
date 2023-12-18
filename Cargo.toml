@@ -5,9 +5,18 @@ edition = "2021"
 license = "MIT OR Apache-2.0"
 description = "SDK for the Ana.so API"
 
-[workspace]
-members = ["anaso_api_models"]
-resolver = "2"
+[features]
+default = ["client", "models"]
+client = []
+models = ["bitflags", "serde-email", "chrono"]
 
 [dependencies]
-anaso_api_models = {path = "./anaso_api_models"}
+bitflags = { version = "2.4.1", features = ["serde"], optional = true }
+bs58 = { version = "0.5.0" }
+chrono = { version = "0.4", features = ["serde"], optional = true }
+serde = { version = "1.0.189", features = ["derive", "rc"] }
+serde-email = { version = "3.0.0", optional = true }
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
